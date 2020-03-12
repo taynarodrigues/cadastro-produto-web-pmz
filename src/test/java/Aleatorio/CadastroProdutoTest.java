@@ -2,6 +2,7 @@ package Aleatorio;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
@@ -21,10 +22,10 @@ public class CadastroProdutoTest {
 		masterPage.getLoginPage().LoginWeb("teste", "1234");
 	}
 	
-	@After
+//	@After
 	public void tearDown() {
 		
-		navegador.quit();	
+//		navegador.quit();	
 	}
 	
 	@Test
@@ -32,6 +33,20 @@ public class CadastroProdutoTest {
 		
 		masterPage.getCadastroProdutoPage().iconeCarrinhoCompras();
 		masterPage.getCadastroProdutoPage().abaCadastro();
+		masterPage.getCadastroProdutoPage().editarItem("5");
+		masterPage.getCadastroProdutoPage().preencherDadosProduto();
+		masterPage.getCadastroProdutoPage().fecharAba();
+	}
+	
+	@Ignore
+	@Test
+	public void abaCadastroComPesquisa(){
+		
+		masterPage.getCadastroProdutoPage().iconeCarrinhoCompras();
+		masterPage.getCadastroProdutoPage().abaCadastro();
+		masterPage.getCadastroProdutoPage().editarItem("5");
+		masterPage.getCadastroProdutoPage().preencherDadosProduto();
+		masterPage.getCadastroProdutoPage().pesquisaLupa();	
 	}
 	
 }
