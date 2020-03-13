@@ -22,25 +22,26 @@ public class CadastroProdutoTest {
 		masterPage.getLoginPage().LoginWeb("teste", "1234");
 	}
 	
-//	@After
+	@After
 	public void tearDown() {
 		
-//		navegador.quit();	
+		navegador.quit();	
 	}
 	
 	@Test
-	public void abaCadastro(){
+	public void abrirAbaEditarCadastro(){
 		
 		masterPage.getCadastroProdutoPage().iconeCarrinhoCompras();
 		masterPage.getCadastroProdutoPage().abaCadastro();
-		masterPage.getCadastroProdutoPage().editarItem("5");
+		masterPage.getCadastroProdutoPage().editarItem("14");
+		masterPage.getCadastroProdutoPage().selecionaComplementoDoProduto();
 		masterPage.getCadastroProdutoPage().preencherDadosProduto();
-		masterPage.getCadastroProdutoPage().fecharAba();
+		masterPage.getCadastroProdutoPage().salvarCadastro();	
 	}
 	
 	@Ignore
 	@Test
-	public void abaCadastroComPesquisa(){
+	public void abrirAbaEditarCadastroComPesquisa(){
 		
 		masterPage.getCadastroProdutoPage().iconeCarrinhoCompras();
 		masterPage.getCadastroProdutoPage().abaCadastro();

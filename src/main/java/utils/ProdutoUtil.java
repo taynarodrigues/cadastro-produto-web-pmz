@@ -13,25 +13,39 @@ public class ProdutoUtil {
 	public static Map<String, String>getDadosProduto(){
 		
 		map.clear();
-		map.put("codigo_forn", "PSC452");
-		map.clear();
-		map.put("descricao_compl", "PRE-LANCAMENTO");
-		map.put("complemento", "LANCAMENTO");
-		map.put("observacao", "TESTERPMZ");
-		map.put("coefreducao", "1");
-		map.put("coefsubst", "1");
-		map.put("extipi", "1");
+		map.put("codigo_forn", "ACP");
+		map.put("descricao_compl", "");
+		map.put("complemento", "ACP");
+		map.put("observacao", "LANCAMENTO");
+		map.put("coefreducao", "");
+		map.put("coefsubst", "");
+		map.put("extipi", "");
 		map.put("classfiscal", "84212990");
-		map.put("cest", "1");
-		map.put("minimo", "1");
-		map.put("embalagem", "6");
-		map.put("peso_liquido", "0,834");
-		map.put("embalagem_venda", "2");
-		map.put("peso_bruto", "0,9");
-		map.put("ipi", "0");
-		map.put("decimais", "0");
-		map.put("conversao_vd_cp", "1");
+		map.put("cest", "");
+		map.put("minimo", "");
+		map.put("embalagem", "");
+		map.put("peso_liquido", "");
+		map.put("embalagem_venda", "");
+		map.put("peso_bruto", "");
+		map.put("ipi", "");
+		map.put("decimais", "");
+		map.put("conversao_vd_cp", "");
 
+		return map;
+	}
+
+	public static Map<String, String> getCamposProduto() {
+		
+		map.put("grupo_comissao", "6 - PNEUS ESPECIAIS");
+		map.put("estoque", "SIM");
+		map.put("ativo", "SIM");
+		map.put("icms_proprio", "SIM");
+		map.put("imposto", "4 - Prod.Nac.Isento N/Tributado");
+		map.put("abandonado", "PEMAZA");
+		map.put("unidade_compra", "BD - BALDE");
+		map.put("unidade_venda", "CX - CAIXA");
+		map.put("unidade_transf", "CX - CAIXA");
+		
 		return map;
 	}
 

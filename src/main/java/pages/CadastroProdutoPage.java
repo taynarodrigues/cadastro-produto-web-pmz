@@ -1,15 +1,13 @@
 package pages;
 
-import static org.hamcrest.CoreMatchers.containsString;
-
 import java.util.Map;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utils.ProdutoUtil;
@@ -29,7 +27,7 @@ public class CadastroProdutoPage {
 	private void esperaLoading() {
 
 		try {
-			Thread.sleep(500);
+			Thread.sleep(300);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,6 +66,17 @@ public class CadastroProdutoPage {
 		}
 	}
 
+	public void selecionaComplementoDoProduto() {
+		
+		esperaLoading();
+		Map<String, String> map = ProdutoUtil.getCamposProduto();
+		for(String xpath: map.keySet()) {
+			esperaLoading();
+			Select estoque = new Select(navegador.findElement(By.xpath("//select[@id='"+xpath+"']")));
+			estoque.selectByVisibleText(map.get(xpath));
+		}
+	}
+
 	public void pesquisaLupa() {
 		
 		esperaLoading();
@@ -77,5 +86,10 @@ public class CadastroProdutoPage {
 	public void fecharAba() {
 		
 		navegador.findElement(By.xpath("//body/div[50]/div[3]/div[1]/button[1]/span[1]")).click();
+	}
+	
+	public void salvarCadastro() {
+		
+		navegador.findElement(By.xpath("//span[contains(text(),'SALVAR CADASTRO')]")).click();
 	}
 }
